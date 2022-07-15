@@ -88,3 +88,23 @@ WHERE (e.birth_date BETWEEN '1965-01-01' AND '1965-12-31')
 AND (de.to_date = '9999-01-01')
 
 ORDER BY e.emp_no;
+
+
+-- Summary Query 1
+-- Looking at the total number of roles who are in the correct age
+-- range and hiring range to be retiring from PH
+SELECT count(ce.emp_no) FROM current_emp as ce;
+
+
+
+
+
+
+
+-- Summary Query 2
+-- Count of mentorship eligible employees by title
+SELECT count(me.emp_no), me.title FROM mentorship_eligibility as me
+
+GROUP BY (me.title);
+
+SELECT count(me.emp_no) FROM mentorship_eligibility as me;
