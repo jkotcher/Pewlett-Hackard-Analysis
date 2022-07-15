@@ -46,3 +46,14 @@ INTO unique_titles
 FROM retirement_titles as rt
 WHERE rt.to_date = '9999-01-01'
 ORDER BY rt.emp_no, rt.to_date DESC;
+
+-- Table of count of titles retiring
+SELECT count(title), ut.title
+
+INTO retiring_titles
+
+FROM unique_titles as ut
+
+GROUP BY ut.title
+
+ORDER BY count(title) DESC;
